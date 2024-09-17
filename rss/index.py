@@ -10,7 +10,7 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type','text/plain')
         self.end_headers()
-        # self.wfile.write('Hello, world!'.encode('utf-8'))
+        self.wfile.write('Hello, world!'.encode('utf-8'))
 
         feed = get_feed_list("https://vvkhash.substack.com/feed")
         # self.wfile.write(str(feed).encode('utf-8'))
