@@ -1,3 +1,9 @@
 {
-  "redirects": [{ "source": "/", "destination": "/api" }]
+  "redirects": [{ "source": "/", "destination": "/rss" }],
+  "builds": [
+      {
+      "src": "rss/index.py",
+      "use": "@vercel/python"
+      }
+    ]
 }
