@@ -6,10 +6,13 @@ def get_rss(url_param):
     try:
         source = parse_qs(urlparse(url_param)[4])['source']
     except Exception:
-        source = ["https://vvkhash.substack.com/feed"]
-    feed = ''
+        source = ["https://blog.vvkhash.com/rss.xml"]
     for s in source:
-        feed = feed + get_feed_list(s)['feed']['title']
+        feed = ''
+        for e in get_feed_list(s)['entries']:
+            feed += f"{e['published']} / {e['title']} / {e['link']} \n"
+
+        # feed = feed + get_feed_list(s)['feed']['title']
     return str(feed)
 
 
@@ -21,7 +24,7 @@ if __name__ == "__main__":
     # Local debug
     # https://www.pythonforbeginners.com/feedparser/using-feedparser-in-python
 
-    text = get_rss("https://vvkhash.substack.com/feed?source=https://vvkhash.substack.com/feed&source=https://tty.vvkhash.com/data/rss")
+    text = get_rss("https://blog.vvkhash.com/rss.xml?source=https://blog.vvkhash.com/rss.xml")
     print(text)
     exit(0)
 
