@@ -10,7 +10,7 @@ def get_rss(url_param):
     for s in source:
         feed = ''
         for e in get_feed_list(s)['entries']:
-            feed += f"<p>{e['published']} / <a href=\"{e['link']}\">{e['title']}</a> </p>\n"
+            feed += f"<p>{e['published']} / <a href=\"{e['link']}\" target=\"_blank\" >{e['title']}</a> </p>\n"
 
         # feed = feed + get_feed_list(s)['feed']['title']
     return str(feed)
