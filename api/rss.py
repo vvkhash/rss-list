@@ -8,7 +8,7 @@ def get_rss(url_param):
     except Exception:
         source = ["https://blog.vvkhash.com/rss.xml"]
     for s in source:
-        feed = "<span style="text-decoration:inherit">"
+        feed = "<span style=\"text-decoration:inherit\">"
         for e in get_feed_list(s)['entries']:
             feed += f"<p>{e['published']} / <a href=\"{e['link']}\" target=\"_blank\" >{e['title']}</a> </p>\n"
         feed += "</span>"
