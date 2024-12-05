@@ -15,7 +15,9 @@ def get_rss(url_param):
         \" "
         feed=""
         for e in get_feed_list(s)['entries']:
-            feed += f"<p style={blog_style}> <a href=\"{e['link']}\" target=\"_blank\" >{e['title']}</a> ({e['published']}) </p>\n"
+            date_list=e['published'].split(" ")
+            date = f"{date_list[1]} {date_list[2]} {date_list[3]}"
+            feed += f"<p style={blog_style}> <a href=\"{e['link']}\" target=\"_blank\" >{e['title']}</a> ({date}) </p>\n"
         # feed = feed + get_feed_list(s)['feed']['title']
     return str(feed)
 
