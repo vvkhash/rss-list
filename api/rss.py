@@ -6,7 +6,7 @@ def get_rss(url_param):
     try:
         source = parse_qs(urlparse(url_param)[4])['source']
     except Exception:
-        source = ["https://blog.vvkhash.com/rss.xml"]
+        source = ["https://www.vvkhash.com/rss.xml"]
     for s in source:
         blog_style=" \" \
             font-family: Arial; \
