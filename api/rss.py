@@ -36,7 +36,7 @@ if __name__ == "__main__":
     # https://www.pythonforbeginners.com/feedparser/using-feedparser-in-python
 
     # text = get_rss("https://blog.vvkhash.com/rss.xml?source=https://blog.vvkhash.com/rss.xml")
-    text = get_rss("https://blog.vvkhash.com/rss.xml?source=http://localhost:8000/rss.xml")
+    text = get_rss("https://www.vvkhash.com/rss.xml?source=http://localhost:8000/rss.xml")
     # text = get_rss("https://blog.vvkhash.com/rss.xml?source=http://localhost:8000/feed.json")
 
     print(text)
